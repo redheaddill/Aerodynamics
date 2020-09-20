@@ -1,6 +1,14 @@
-function [CDo] = ParaDragMidFuse(h,V,c,d,DynVisc,S)%
+function [CDo] = ParaDragFuse(h,V,lCab,d,DynVisc,S)%Alt(ft), velocity(kts), CharLength(ft), Dia(ft), Dynamic Visc(Slug/ft-s), Reference Area(ft^2)
+
+PerLamFlow = 0.01;
 
 Q = 1.01;
+
+lNose = 1.0*d;
+
+lTail = 2.0*d;
+
+c = lNose + lTail + lCab;
 
 Fineness = c/d;
 
@@ -26,7 +34,7 @@ end
 
 FF = (1+60/(Fineness^3)+Fineness/400);
 
-SWet = pi*d*c;
+SWet = pi*d*lCab+0.75*pi*d*lNose+0.72*pi*d*lTail;
 
 CDo = Cf*FF*Q*SWet/S;
 
