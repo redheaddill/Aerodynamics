@@ -32,7 +32,7 @@ else
     
 end
 
-FF = (1+60/(Fineness^3)+Fineness/400);
+FF = (1+60/(Fineness^3)+Fineness/400)
 
 SWet = pi*d*lCab+0.75*pi*d*lNose+0.72*pi*d*lTail;
 
