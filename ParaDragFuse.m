@@ -1,12 +1,8 @@
-function [CDo] = ParaDragFuse(h,V,lCab,d,DynVisc,S)%Alt(ft), velocity(kts), CharLength(ft), Dia(ft), Dynamic Visc(Slug/ft-s), Reference Area(ft^2)
+function [CDo] = ParaDragFuse(h,V,lCab,lNose,lTail,d,DynVisc,S)%Alt(ft), velocity(kts), CharLength(ft), Dia(ft), Dynamic Visc(Slug/ft-s), Reference Area(ft^2)
 
 PerLamFlow = 0.01;
 
 Q = 1.01;
-
-lNose = 1.0*d;
-
-lTail = 2.0*d;
 
 c = lNose + lTail + lCab;
 
