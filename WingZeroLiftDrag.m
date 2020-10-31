@@ -22,9 +22,9 @@ SweepMaxT = atand(tand(SweepQuartC)-4/AR*((LocMaxT-0.25)*(1-TaperRatio)/(1+Taper
 Re = AirDens*V*1.688*Cmac/DynVisc;
 ReCut = 38.21*(Cmac/(2.08*10^(-5))); %Smooth Paint surface roughness
 if ReCut < Re
-    Cf = PerLamFlow*1.328/sqrt(Re)+(1-PerLamFlow)*0.455/((log10(ReCut)^2.58)*(1+0.144*(M)^2)^0.65);
+    Cf = PerLamFlow*1.32824/sqrt(Re)+(1-PerLamFlow)*0.455/((log10(ReCut)^2.58)*(1+0.144*(M)^2)^0.65);
 else
-    Cf = PerLamFlow*1.328/sqrt(Re)+(1-PerLamFlow)*0.455/((log10(Re)^2.58)*(1+0.144*(M)^2)^0.65);
+    Cf = PerLamFlow*1.32824/sqrt(Re)+(1-PerLamFlow)*0.455/((log10(Re)^2.58)*(1+0.144*(M)^2)^0.65);
 end
 FF = (1+0.6*Tmax/LocMaxT+100*Tmax^4)*(1.34*M^(0.18)*(cosd(SweepMaxT)^(0.28)))
 Swet = (1.977+0.52*Tmax)*Sexp
