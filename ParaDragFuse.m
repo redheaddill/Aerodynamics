@@ -20,17 +20,17 @@ ReCut = 38.21*(c/(2.08*10^(-5)));
 
 if ReCut < Re 
     
-    Cf = PerLamFlow*1.32824/sqrt(Re)+(1-PerLamFlow)*0.455/((log10(ReCut)^2.58)*(1+0.144*(M)^2)^0.65);
+    Cf = PerLamFlow*1.32824/sqrt(Re)+(1-PerLamFlow)*0.455/((log10(ReCut)^2.58)*(1+0.144*(M)^2)^0.65)
 
 else
 
-    Cf = PerLamFlow*1.32824/sqrt(Re)+(1-PerLamFlow)*0.455/((log10(Re)^2.58)*(1+0.144*(M)^2)^0.65);
+    Cf = PerLamFlow*1.32824/sqrt(Re)+(1-PerLamFlow)*0.455/((log10(Re)^2.58)*(1+0.144*(M)^2)^0.65)
     
 end
 
 FF = (1+60/(FinenessRatio^3)+FinenessRatio/400)
 
-SWet = pi*d*lCab+0.75*pi*d*lNose+0.72*pi*d*lTail;
+SWet = pi*d*lCab+0.75*pi*d*lNose+0.72*pi*d*lTail
 
-CDo = Cf*FF*Q*SWet/S;
+CDo = Cf*FF*Q*SWet/S
 
