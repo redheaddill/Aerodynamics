@@ -11,7 +11,7 @@ M = V*1.688/SpeedSound;
 
 AirDens = DensRat*2.3769*10^-3; %Slug/ft^3
 
-Re = AirDens*V*1.688*LNacelle/DynVisc;
+Re = AirDens*V*1.688*LNacelle/DynVisc
 
 ReCut = 38.21*(LNacelle/(2.08*10^(-5)));
 
