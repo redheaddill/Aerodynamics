@@ -1,5 +1,12 @@
-function [c] = YehudiChord(y,Yehudi,Cr,TaperRatio,b)
+function [c] = YehudiChord(y)
     
+    run AircraftData
+    
+    Yehudi = Vanguard.Wing.Yehudi;
+    Cr = Vanguard.Wing.Cr;
+    TaperRatio = Vanguard.Wing.TaperRatio;
+    b = Vanguard.Wing.b;
+
     if y<=Yehudi
         
         c = Cr;
