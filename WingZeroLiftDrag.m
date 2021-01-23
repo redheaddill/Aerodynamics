@@ -1,18 +1,20 @@
 function [CDo] = WingZeroLiftDrag(V,Q,TaperRatio,DynVisc,SweepQuartC,S,AR,b,h,LocMaxT,Df,PerLamFlow,Tmax)
 %Q = 1.01 %For HIGH or MID wing
 
+run AircraftData
+
 [TempRat, PresRat, DensRat, SpeedSound] = ISA(h);
 AirDens = DensRat*2.3769*10^-3; %Slug/ft^3
 V=V*1.688
 M = V/SpeedSound
 
 
-Cr = 2*S/(b*(1+TaperRatio))
-Cmac = 2/3*((1+TaperRatio+TaperRatio^2)/(1+TaperRatio))*Cr
+Cr = Vanguard.Wing.Cr
+Cmac = Vanguard.Wing.MAC
 Ymac = b/6*((1+2*TaperRatio)/(1+TaperRatio))
 SweepMaxT = atand(tand(SweepQuartC)-4/AR*((LocMaxT-0.25)*(1-TaperRatio)/(1+TaperRatio)))
-Cf = Cr*(1-(1-TaperRatio)*2*Df/2/b);
-Sexp = S-(Cf+Cr)/2*Df
+Cf = YehudiChord(Df/2);
+Sexp = S-Cf*Df;
 
 Re = AirDens*V*1.688*Cmac/DynVisc
     

@@ -125,7 +125,7 @@ function [] = Cessna172()
     
     % Set Flight Condition Data
     FCData.Mach  = 0.1630;  % Freestream Mach number
-    FCData.alpha = 4.9;     % Angle of attack (deg)
+    FCData.alpha = 13;     % Angle of attack (deg)
     FCData.beta  = 0;       % Sideslip angle (deg)
     FCData.phat  = 0;       % Nondimensional roll rate (rad/sec)
     FCData.qhat  = 0;       % Nondimensional pitch rate (rad/sec)
@@ -156,9 +156,9 @@ openvar FCData.Cm_section
 % Wing Cl (19 panels)
 figure
 plot(FCData.ylocal(1:19),FCData.Cl_section(1:19))
-% HT Cl (6 panels)
-figure
-plot(FCData.ylocal(20:25),FCData.Cl_section(20:25))
-% VT Cl (5 panels)
-figure
-plot(FCData.ylocal(26:30),FCData.Cl_section(26:30))
+% % HT Cl (6 panels)
+% figure
+% plot(FCData.ylocal(20:25),FCData.Cl_section(20:25))
+% % VT Cl (5 panels)
+% figure
+% plot(FCData.ylocal(26:30),FCData.Cl_section(26:30))

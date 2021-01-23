@@ -31,8 +31,8 @@ close all
     VLData.Element(1).X.Root = 0;                   % Lifting Element x Coordinate @ Quarter Chord
     VLData.Element(1).Y.Root = 0;                   % Lifting Element y Coordinate @ Quarter Chord
     VLData.Element(1).Z.Root = 0;                   % Lifting Element z Coordinate @ Quarter Chord
-    VLData.Element(1).Incidence.Root = 2;           % Lifting Element Root Incidence Angle (deg)
-    VLData.Element(1).Incidence.Tip = 1;            % Lifting Element Tip Incidence Angle (deg)
+    VLData.Element(1).Incidence.Root = 0;           % Lifting Element Root Incidence Angle (deg)
+    VLData.Element(1).Incidence.Tip = 0;            % Lifting Element Tip Incidence Angle (deg)
     VLData.Element(1).cdp0 = 0;                  % Lifting Element Airfoil zero lift parasite drag coefficient
     VLData.Element(1).cdp1 = 0;                     % Lifting Element Airfoil linear lift dependent parasite drag term
     VLData.Element(1).cdp2 = 0;                     % Lifting Element Airfoil quadratic lift dependent parasite drag term
@@ -53,7 +53,7 @@ close all
     VLData.Element(2).X.Root = 0;
     VLData.Element(2).Y.Root = Vanguard.Wing.Yehudi;
     VLData.Element(2).Z.Root = 0;
-    VLData.Element(2).Incidence.Root = 1;
+    VLData.Element(2).Incidence.Root = 0;
     VLData.Element(2).Incidence.Tip = 0;
     VLData.Element(2).cdp0 = 0;
     VLData.Element(2).cdp1 = 0;
@@ -76,7 +76,7 @@ close all
     VLData.Element(3).Y.Root = taper1;
     VLData.Element(3).Z.Root = 0;
     VLData.Element(3).Incidence.Root = 0;
-    VLData.Element(3).Incidence.Tip = -1;
+    VLData.Element(3).Incidence.Tip = 0;
     VLData.Element(3).cdp0 = 0;
     VLData.Element(3).cdp1 = 0;
     VLData.Element(3).cdp2 = 0;
@@ -88,7 +88,7 @@ close all
     VLData.Element(3).reflectgeometry = 'true';
     VLData.Element(3).wakelocation = 1;
    
-    VLData.Element(4).Name = 'Taper3';    
+    VLData.Element(4).Name = 'Aileron';    
     VLData.Element(4).Area = (YehudiChord(taper2)+YehudiChord(taper3))/2*(taper3-taper2);
     VLData.Element(4).Span = (taper3-taper2);
     VLData.Element(4).Taper = YehudiChord(taper3)/YehudiChord(taper2);
@@ -97,8 +97,8 @@ close all
     VLData.Element(4).X.Root = 0;
     VLData.Element(4).Y.Root = taper2;
     VLData.Element(4).Z.Root = 0;
-    VLData.Element(4).Incidence.Root = -1;
-    VLData.Element(4).Incidence.Tip = -2;
+    VLData.Element(4).Incidence.Root = 0;
+    VLData.Element(4).Incidence.Tip = 0;
     VLData.Element(4).cdp0 = 0;
     VLData.Element(4).cdp1 = 0;
     VLData.Element(4).cdp2 = 0;
@@ -112,7 +112,7 @@ close all
     
     
    
-    VLData.Element(5).Name = 'Ailerons';
+    VLData.Element(5).Name = 'Tip';
     VLData.Element(5).Area = (YehudiChord(Vanguard.Wing.Aileron)+YehudiChord(59))/2*(59-Vanguard.Wing.Aileron);
     VLData.Element(5).Span = (59-Vanguard.Wing.Aileron);
     VLData.Element(5).Taper = YehudiChord(59)/YehudiChord(Vanguard.Wing.Aileron);
@@ -289,7 +289,7 @@ close all
 %     VLData.Element(11).wakelocation = 1;
     
     FCData.Mach  = 0.58;    % Freestream Mach number (Cruise 250 kts)
-    FCData.alpha = 10;       % Angle of attack (deg)
+    FCData.alpha = 12.5;       % Angle of attack (deg)
     FCData.beta  = 0;       % Sideslip angle (deg)
     FCData.phat  = 0;    % Nondimensional roll rate (rad/sec)
     FCData.qhat  = 0;       % Nondimensional pitch rate (rad/sec)
