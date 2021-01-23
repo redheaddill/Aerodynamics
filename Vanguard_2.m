@@ -4,6 +4,10 @@ clear all
 close all
 
     run AircraftData.mlx
+    
+    taper1 = 32;
+    taper2 = 44;
+    taper3 = 56.05;
 
 	% Set Case Title and Plot Option
     VLData.Title = 'AEE-421 Vanguard';
@@ -27,8 +31,8 @@ close all
     VLData.Element(1).X.Root = 0;                   % Lifting Element x Coordinate @ Quarter Chord
     VLData.Element(1).Y.Root = 0;                   % Lifting Element y Coordinate @ Quarter Chord
     VLData.Element(1).Z.Root = 0;                   % Lifting Element z Coordinate @ Quarter Chord
-    VLData.Element(1).Incidence.Root = 0;           % Lifting Element Root Incidence Angle (deg)
-    VLData.Element(1).Incidence.Tip = 0;            % Lifting Element Tip Incidence Angle (deg)
+    VLData.Element(1).Incidence.Root = 2;           % Lifting Element Root Incidence Angle (deg)
+    VLData.Element(1).Incidence.Tip = 1;            % Lifting Element Tip Incidence Angle (deg)
     VLData.Element(1).cdp0 = 0;                  % Lifting Element Airfoil zero lift parasite drag coefficient
     VLData.Element(1).cdp1 = 0;                     % Lifting Element Airfoil linear lift dependent parasite drag term
     VLData.Element(1).cdp2 = 0;                     % Lifting Element Airfoil quadratic lift dependent parasite drag term
@@ -40,16 +44,16 @@ close all
     VLData.Element(1).reflectgeometry = 'true';     % Lifting Element Reflect Geometry Flag
     VLData.Element(1).wakelocation = 1;
     
-    VLData.Element(2).Name = 'Taper';
-    VLData.Element(2).Area = Vanguard.Wing.S/2-Vanguard.Wing.Yehudi*Vanguard.Wing.Cr;
-    VLData.Element(2).Span = Vanguard.Wing.b/2-Vanguard.Wing.Yehudi;
-    VLData.Element(2).Taper = Vanguard.Wing.TaperRatio;
+    VLData.Element(2).Name = 'Taper1';
+    VLData.Element(2).Area = (YehudiChord(Vanguard.Wing.Yehudi)+YehudiChord(taper1))/2*(taper1-20);
+    VLData.Element(2).Span = (taper1-20);
+    VLData.Element(2).Taper = YehudiChord(taper1)/YehudiChord(Vanguard.Wing.Yehudi);
     VLData.Element(2).Sweep = 0;
     VLData.Element(2).Dihedral = 0;
     VLData.Element(2).X.Root = 0;
     VLData.Element(2).Y.Root = Vanguard.Wing.Yehudi;
     VLData.Element(2).Z.Root = 0;
-    VLData.Element(2).Incidence.Root = 0;
+    VLData.Element(2).Incidence.Root = 1;
     VLData.Element(2).Incidence.Tip = 0;
     VLData.Element(2).cdp0 = 0;
     VLData.Element(2).cdp1 = 0;
@@ -58,53 +62,77 @@ close all
     VLData.Element(2).clmax = Vanguard.Wing.Airfoil.Clmax;
     VLData.Element(2).cl0 = Vanguard.Wing.Airfoil.Clo;
     VLData.Element(2).cla = Vanguard.Wing.Airfoil.Cla*180/pi;
-    VLData.Element(2).npan = 20;
+    VLData.Element(2).npan = 5;
     VLData.Element(2).reflectgeometry = 'true';
     VLData.Element(2).wakelocation = 1;
     
-    VLData.Element(3).Name = 'Ailerons';
-    VLData.Element(3).Area = 25;
-    VLData.Element(3).Span = 7.1;
-    VLData.Element(3).Taper = 0.53;
-    VLData.Element(3).Sweep = 23;
-    VLData.Element(3).Dihedral = 90;
-    VLData.Element(3).X.Root = 21.5;
-    VLData.Element(3).Y.Root = 10.9;
-    VLData.Element(3).Z.Root = -1;
+    VLData.Element(3).Name = 'Taper2';
+    VLData.Element(3).Area = (YehudiChord(taper1)+YehudiChord(taper2))/2*(taper2-taper1);
+    VLData.Element(3).Span = (taper2-taper1);
+    VLData.Element(3).Taper = YehudiChord(taper2)/YehudiChord(taper1);
+    VLData.Element(3).Sweep = 0;
+    VLData.Element(3).Dihedral = 0;
+    VLData.Element(3).X.Root = 0;
+    VLData.Element(3).Y.Root = taper1;
+    VLData.Element(3).Z.Root = 0;
     VLData.Element(3).Incidence.Root = 0;
-    VLData.Element(3).Incidence.Tip = 0;
-    VLData.Element(3).cdp0 = 0.01;
+    VLData.Element(3).Incidence.Tip = -1;
+    VLData.Element(3).cdp0 = 0;
     VLData.Element(3).cdp1 = 0;
     VLData.Element(3).cdp2 = 0;
     VLData.Element(3).cm0 = 0;
-    VLData.Element(3).clmax = 1.1;
-    VLData.Element(3).cl0 = 0;
-    VLData.Element(3).cla = 2*pi;
-    VLData.Element(3).npan = 8;
+    VLData.Element(3).clmax = Vanguard.Wing.Airfoil.Clmax;                 
+    VLData.Element(3).cl0 = Vanguard.Wing.Airfoil.Clo;                  
+    VLData.Element(3).cla = Vanguard.Wing.Airfoil.Cla*180/pi; 
+    VLData.Element(3).npan = 5;
     VLData.Element(3).reflectgeometry = 'true';
     VLData.Element(3).wakelocation = 1;
-%    
-%     VLData.Element(4).Name = 'Fuselage Horizontal Segment 1';
-%     VLData.Element(4).Area = 42.0;
-%     VLData.Element(4).Span = 2.625;
-%     VLData.Element(4).Taper = 1;
-%     VLData.Element(4).Sweep = 0;
-%     VLData.Element(4).Dihedral = 0;
-%     VLData.Element(4).X.Root = -12;
-%     VLData.Element(4).Y.Root = 0;
-%     VLData.Element(4).Z.Root = -2.625;
-%     VLData.Element(4).Incidence.Root = 0;
-%     VLData.Element(4).Incidence.Tip = 0;
-%     VLData.Element(4).cdp0 = 0;
-%     VLData.Element(4).cdp1 = 0;
-%     VLData.Element(4).cdp2 = 0;
-%     VLData.Element(4).cm0 = 0;
-%     VLData.Element(4).clmax = 0;
-%     VLData.Element(4).cl0 = 0;
-%     VLData.Element(4).cla = 2*pi;
-%     VLData.Element(4).npan = 4;
-%     VLData.Element(4).reflectgeometry = 'true';
-%     VLData.Element(4).wakelocation = 1;
+   
+    VLData.Element(4).Name = 'Taper3';    
+    VLData.Element(4).Area = (YehudiChord(taper2)+YehudiChord(taper3))/2*(taper3-taper2);
+    VLData.Element(4).Span = (taper3-taper2);
+    VLData.Element(4).Taper = YehudiChord(taper3)/YehudiChord(taper2);
+    VLData.Element(4).Sweep = 0;
+    VLData.Element(4).Dihedral = 0;
+    VLData.Element(4).X.Root = 0;
+    VLData.Element(4).Y.Root = taper2;
+    VLData.Element(4).Z.Root = 0;
+    VLData.Element(4).Incidence.Root = -1;
+    VLData.Element(4).Incidence.Tip = -2;
+    VLData.Element(4).cdp0 = 0;
+    VLData.Element(4).cdp1 = 0;
+    VLData.Element(4).cdp2 = 0;
+    VLData.Element(4).cm0 = 0;
+    VLData.Element(4).clmax = Vanguard.Wing.Airfoil.Clmax;                 
+    VLData.Element(4).cl0 = Vanguard.Wing.Airfoil.Clo;                  
+    VLData.Element(4).cla = Vanguard.Wing.Airfoil.Cla*180/pi; 
+    VLData.Element(4).npan = 5;
+    VLData.Element(4).reflectgeometry = 'true';
+    VLData.Element(4).wakelocation = 1;
+    
+    
+   
+    VLData.Element(5).Name = 'Ailerons';
+    VLData.Element(5).Area = (YehudiChord(Vanguard.Wing.Aileron)+YehudiChord(59))/2*(59-Vanguard.Wing.Aileron);
+    VLData.Element(5).Span = (59-Vanguard.Wing.Aileron);
+    VLData.Element(5).Taper = YehudiChord(59)/YehudiChord(Vanguard.Wing.Aileron);
+    VLData.Element(5).Sweep = 0;
+    VLData.Element(5).Dihedral = 0;
+    VLData.Element(5).X.Root = 0;
+    VLData.Element(5).Y.Root = Vanguard.Wing.Aileron;
+    VLData.Element(5).Z.Root = 0;
+    VLData.Element(5).Incidence.Root = 0;
+    VLData.Element(5).Incidence.Tip = 0;
+    VLData.Element(5).cdp0 = 0;
+    VLData.Element(5).cdp1 = 0;
+    VLData.Element(5).cdp2 = 0;
+    VLData.Element(5).cm0 = 0;
+    VLData.Element(5).clmax = Vanguard.Wing.Airfoil.Clmax;                 
+    VLData.Element(5).cl0 = Vanguard.Wing.Airfoil.Clo;                  
+    VLData.Element(5).cla = Vanguard.Wing.Airfoil.Cla*180/pi; 
+    VLData.Element(5).npan = 2;
+    VLData.Element(5).reflectgeometry = 'true';
+    VLData.Element(5).wakelocation = 1;
 %     
 %     VLData.Element(5).Name = 'Fuselage Horizontal Segment 2';
 %     VLData.Element(5).Area = 42.0;
@@ -289,9 +317,9 @@ openvar FCData.Cz_section
 openvar FCData.Cx_section
 openvar FCData.Cm_section
 
-% Wing Cl (28 panels)
+% Wing Cl
 figure
-plot(FCData.ylocal(1:30),FCData.Cl_section(1:30))
+plot(FCData.ylocal(1:27),FCData.Cl_section(1:27))
 title('Wing Section Lift Coefficient');
 xlabel('Spanwise Location');
 ylabel('Lift Coefficient');
@@ -309,7 +337,7 @@ ylabel('Lift Coefficient');
 % ylabel('Lift Coefficient');
 % Wing Lift Distribution (28 panels)
 figure
-plot(FCData.ylocal(1:30),FCData.L_section(1:30))
+plot(FCData.ylocal(1:27),FCData.L_section(1:27))
 title('Wing Lift Distribution');
 xlabel('Spanwise Location');
 ylabel('Lift');
