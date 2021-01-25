@@ -9,7 +9,7 @@ close all
     taper2 = 44;
     taper3 = 56.05;
     
-    InstallAngle = 2.157;
+    InstallAngle = 2.04;
     YehudiTwist = 0.35;
     TaperTwist1 = 1.5;
     TaperTwist2 = 1;
@@ -315,8 +315,8 @@ close all
 %     VLData.Element(11).reflectgeometry = 'true';
 %     VLData.Element(11).wakelocation = 1;
     
-    FCData.Mach  = 0.58;    % Freestream Mach number (Cruise 250 kts)
-    FCData.alpha = 0;       % Angle of attack (deg)
+    FCData.Mach  = 0.6233;    % Freestream Mach number (Cruise 250 kts)
+    FCData.alpha = 10.75;       % Angle of attack (deg)
     FCData.beta  = 0;       % Sideslip angle (deg)
     FCData.phat  = 0;    % Nondimensional roll rate (rad/sec)
     FCData.qhat  = 0;       % Nondimensional pitch rate (rad/sec)
@@ -349,8 +349,8 @@ CL = FCData.CL;
 % Wing Cl
 figure
 plot(FCData.ylocal(1:27),FCData.Cl_section(1:27)/CL,'black')
-title('Relative Wing Lift Distribution');
-xlabel('Spanwise Location');
+%title('Relative Wing Lift Distribution');
+xlabel('Spanwise Location (ft)');
 ylabel('Relative Lift Coefficient');
 xline(taper2,'--');
 xline(taper3,'--');
@@ -371,6 +371,8 @@ twist(7) = VLData.Element(6).Incidence.Tip;
 
 figure
 plot(y,twist,'black')
+ylabel('Angle of Twist (deg)');
+xlabel('Spanwise Location (ft)');
 grid on
 grid minor
 
