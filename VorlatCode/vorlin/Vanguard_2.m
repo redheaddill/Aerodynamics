@@ -259,9 +259,9 @@ close all
     VLData.Element(11).wakelocation = 1;
     
     FCData.Mach  = 0.41;    % Freestream Mach number (Cruise 250 kts)
-    FCData.alpha = 0;       % Angle of attack (deg)
+    FCData.alpha = 5;       % Angle of attack (deg)
     FCData.beta  = 0;       % Sideslip angle (deg)
-    FCData.phat  = pi/4;    % Nondimensional roll rate (rad/sec)
+    FCData.phat  = 0;    % Nondimensional roll rate (rad/sec)
     FCData.qhat  = 0;       % Nondimensional pitch rate (rad/sec)
     FCData.rhat  = 0;       % Nondimensional yaw rate (rad/sec)
     
@@ -294,17 +294,17 @@ title('Wing Section Lift Coefficient');
 xlabel('Spanwise Location');
 ylabel('Lift Coefficient');
 % HT Cl (12 panels)
-figure
-plot(FCData.ylocal(29:40),FCData.Cl_section(29:40))
-title('HT Section Lift Coefficient');
-xlabel('Spanwise Location');
-ylabel('Lift Coefficient');
-% VT Cl (8 panels)
-figure
-plot(FCData.zlocal(41:48),FCData.Cl_section(41:48))
-title('VT Section Lift Coefficient');
-xlabel('Spanwise Location');
-ylabel('Lift Coefficient');
+% figure
+% plot(FCData.ylocal(29:40),FCData.Cl_section(29:40))
+% title('HT Section Lift Coefficient');
+% xlabel('Spanwise Location');
+% ylabel('Lift Coefficient');
+% % VT Cl (8 panels)
+% figure
+% plot(FCData.zlocal(41:48),FCData.Cl_section(41:48))
+% title('VT Section Lift Coefficient');
+% xlabel('Spanwise Location');
+% ylabel('Lift Coefficient');
 % Wing Lift Distribution (28 panels)
 figure
 plot(FCData.ylocal(1:28),FCData.L_section(1:28))
@@ -312,8 +312,8 @@ title('Wing Lift Distribution');
 xlabel('Spanwise Location');
 ylabel('Lift');
 % HT Lift Distribution (12 panels)
-figure
-plot(FCData.ylocal(29:40),FCData.L_section(29:40))
-title('HT Lift Distribution');
-xlabel('Spanwise Location');
-ylabel('Lift');
+% figure
+% plot(FCData.ylocal(29:40),FCData.L_section(29:40))
+% title('HT Lift Distribution');
+% xlabel('Spanwise Location');
+% ylabel('Lift');
