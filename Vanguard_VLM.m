@@ -33,9 +33,9 @@ close all
     VLData.Element(1).Taper = 1;                 % Lifting Element Taper Ratio
     VLData.Element(1).Sweep = 0;                 % Lifting Element Sweep @ Quarter Chord (deg)
     VLData.Element(1).Dihedral = 0;                 % Lifting Element Dihedral Angle (deg)
-    VLData.Element(1).X.Root = 0;                   % Lifting Element x Coordinate @ Quarter Chord
+    VLData.Element(1).X.Root = 41.4725;                   % Lifting Element x Coordinate @ Quarter Chord
     VLData.Element(1).Y.Root = 0;                   % Lifting Element y Coordinate @ Quarter Chord
-    VLData.Element(1).Z.Root = 0;                   % Lifting Element z Coordinate @ Quarter Chord
+    VLData.Element(1).Z.Root = 11.5;                   % Lifting Element z Coordinate @ Quarter Chord
     VLData.Element(1).Incidence.Root = InstallAngle;           % Lifting Element Root Incidence Angle (deg)
     VLData.Element(1).Incidence.Tip = InstallAngle;            % Lifting Element Tip Incidence Angle (deg)
     VLData.Element(1).cdp0 = 0;                  % Lifting Element Airfoil zero lift parasite drag coefficient
@@ -55,9 +55,9 @@ close all
     VLData.Element(2).Taper = 1;                 % Lifting Element Taper Ratio
     VLData.Element(2).Sweep = 0;                 % Lifting Element Sweep @ Quarter Chord (deg)
     VLData.Element(2).Dihedral = 0;                 % Lifting Element Dihedral Angle (deg)
-    VLData.Element(2).X.Root = 0;                   % Lifting Element x Coordinate @ Quarter Chord
+    VLData.Element(2).X.Root = 41.4725;                   % Lifting Element x Coordinate @ Quarter Chord
     VLData.Element(2).Y.Root = Vanguard.Wing.Yehudi/2;                   % Lifting Element y Coordinate @ Quarter Chord
-    VLData.Element(2).Z.Root = 0;                   % Lifting Element z Coordinate @ Quarter Chord
+    VLData.Element(2).Z.Root = 11.5;                   % Lifting Element z Coordinate @ Quarter Chord
     VLData.Element(2).Incidence.Root = InstallAngle;           % Lifting Element Root Incidence Angle (deg)
     VLData.Element(2).Incidence.Tip = InstallAngle-YehudiTwist;            % Lifting Element Tip Incidence Angle (deg)
     VLData.Element(2).cdp0 = 0;                  % Lifting Element Airfoil zero lift parasite drag coefficient
@@ -77,9 +77,9 @@ close all
     VLData.Element(3).Taper = YehudiChord(taper1)/YehudiChord(Vanguard.Wing.Yehudi);
     VLData.Element(3).Sweep = 0;
     VLData.Element(3).Dihedral = 0;
-    VLData.Element(3).X.Root = 0;
+    VLData.Element(3).X.Root = 41.4725;
     VLData.Element(3).Y.Root = Vanguard.Wing.Yehudi;
-    VLData.Element(3).Z.Root = 0;
+    VLData.Element(3).Z.Root = 11.5;
     VLData.Element(3).Incidence.Root = InstallAngle-YehudiTwist;
     VLData.Element(3).Incidence.Tip = InstallAngle-YehudiTwist-TaperTwist1;
     VLData.Element(3).cdp0 = 0;
@@ -99,9 +99,9 @@ close all
     VLData.Element(4).Taper = YehudiChord(taper2)/YehudiChord(taper1);
     VLData.Element(4).Sweep = 0;
     VLData.Element(4).Dihedral = 0;
-    VLData.Element(4).X.Root = 0;
+    VLData.Element(4).X.Root = 41.4725;
     VLData.Element(4).Y.Root = taper1;
-    VLData.Element(4).Z.Root = 0;
+    VLData.Element(4).Z.Root = 11.5;
     VLData.Element(4).Incidence.Root = InstallAngle-YehudiTwist-TaperTwist1;
     VLData.Element(4).Incidence.Tip = InstallAngle-YehudiTwist-TaperTwist1-TaperTwist2;
     VLData.Element(4).cdp0 = 0;
@@ -121,9 +121,9 @@ close all
     VLData.Element(5).Taper = YehudiChord(taper3)/YehudiChord(taper2);
     VLData.Element(5).Sweep = 0;
     VLData.Element(5).Dihedral = 0;
-    VLData.Element(5).X.Root = 0;
+    VLData.Element(5).X.Root = 41.4725;
     VLData.Element(5).Y.Root = taper2;
-    VLData.Element(5).Z.Root = 0;
+    VLData.Element(5).Z.Root = 11.5;
     VLData.Element(5).Incidence.Root = InstallAngle-YehudiTwist-TaperTwist1-TaperTwist2;
     VLData.Element(5).Incidence.Tip = InstallAngle-YehudiTwist-TaperTwist1-TaperTwist2;
     VLData.Element(5).cdp0 = 0;
@@ -145,9 +145,9 @@ close all
     VLData.Element(6).Taper = YehudiChord(59)/YehudiChord(Vanguard.Wing.Aileron);
     VLData.Element(6).Sweep = 0;
     VLData.Element(6).Dihedral = 0;
-    VLData.Element(6).X.Root = 0;
+    VLData.Element(6).X.Root = 41.4725;
     VLData.Element(6).Y.Root = Vanguard.Wing.Aileron;
-    VLData.Element(6).Z.Root = 0;
+    VLData.Element(6).Z.Root = 11.5;
     VLData.Element(6).Incidence.Root = InstallAngle-YehudiTwist-TaperTwist1-TaperTwist2;
     VLData.Element(6).Incidence.Tip = InstallAngle-YehudiTwist-TaperTwist1-TaperTwist2;
     VLData.Element(6).cdp0 = 0;
@@ -160,169 +160,109 @@ close all
     VLData.Element(6).npan = 2;
     VLData.Element(6).reflectgeometry = 'true';
     VLData.Element(6).wakelocation = 1;
-%     
-%     VLData.Element(5).Name = 'Fuselage Horizontal Segment 2';
-%     VLData.Element(5).Area = 42.0;
-%     VLData.Element(5).Span = 2.625;
-%     VLData.Element(5).Taper = 1;
-%     VLData.Element(5).Sweep = 0;
-%     VLData.Element(5).Dihedral = 0;
-%     VLData.Element(5).X.Root = 4;
-%     VLData.Element(5).Y.Root = 0;
-%     VLData.Element(5).Z.Root = -2.625;
-%     VLData.Element(5).Incidence.Root = 0;
-%     VLData.Element(5).Incidence.Tip = 0;
-%     VLData.Element(5).cdp0 = 0;
-%     VLData.Element(5).cdp1 = 0;
-%     VLData.Element(5).cdp2 = 0;
-%     VLData.Element(5).cm0 = 0;
-%     VLData.Element(5).clmax = 0;
-%     VLData.Element(5).cl0 = 0;
-%     VLData.Element(5).cla = 2*pi;
-%     VLData.Element(5).npan = 4;
-%     VLData.Element(5).reflectgeometry = 'true';
-%     VLData.Element(5).wakelocation = 1;
-%     
-%     VLData.Element(6).Name = 'Fuselage Horizontal Segment 3';
-%     VLData.Element(6).Area = 42;
-%     VLData.Element(6).Span = 2.625;
-%     VLData.Element(6).Taper = 1;
-%     VLData.Element(6).Sweep = 0;
-%     VLData.Element(6).Dihedral = 0;
-%     VLData.Element(6).X.Root = 20;
-%     VLData.Element(6).Y.Root = 0;
-%     VLData.Element(6).Z.Root = -2.625;
-%     VLData.Element(6).Incidence.Root = 0;
-%     VLData.Element(6).Incidence.Tip = 0;
-%     VLData.Element(6).cdp0 = 0;
-%     VLData.Element(6).cdp1 = 0;
-%     VLData.Element(6).cdp2 = 0;
-%     VLData.Element(6).cm0 = 0;
-%     VLData.Element(6).clmax = 0;
-%     VLData.Element(6).cl0 = 0;
-%     VLData.Element(6).cla = 2*pi;
-%     VLData.Element(6).npan = 4;
-%     VLData.Element(6).reflectgeometry = 'true';
-%     VLData.Element(6).wakelocation = 1;
-%     
-%     VLData.Element(7).Name = 'Fuselage Vertical Segment 1';
-%     VLData.Element(7).Area = 84;
-%     VLData.Element(7).Span = 5.25;
-%     VLData.Element(7).Taper = 1;
-%     VLData.Element(7).Sweep = 0;
-%     VLData.Element(7).Dihedral = 90;
-%     VLData.Element(7).X.Root = -12;
-%     VLData.Element(7).Y.Root = 0;
-%     VLData.Element(7).Z.Root = -5.25;
-%     VLData.Element(7).Incidence.Root = 0;
-%     VLData.Element(7).Incidence.Tip = 0;
-%     VLData.Element(7).cdp0 = 0;
-%     VLData.Element(7).cdp1 = 0;
-%     VLData.Element(7).cdp2 = 0;
-%     VLData.Element(7).cm0 = 0;
-%     VLData.Element(7).clmax = 0;
-%     VLData.Element(7).cl0 = 0;
-%     VLData.Element(7).cla = 2*pi;
-%     VLData.Element(7).npan = 6;
-%     VLData.Element(7).reflectgeometry = 'false';
-%     VLData.Element(7).wakelocation = 1;
-%     
-%     VLData.Element(8).Name = 'Fuselage Vertical Segment 2';
-%     VLData.Element(8).Area = 84;
-%     VLData.Element(8).Span = 5.25;
-%     VLData.Element(8).Taper = 1;
-%     VLData.Element(8).Sweep = 0;
-%     VLData.Element(8).Dihedral = 90;
-%     VLData.Element(8).X.Root = 4;
-%     VLData.Element(8).Y.Root = 0;
-%     VLData.Element(8).Z.Root = -5.25;
-%     VLData.Element(8).Incidence.Root = 0;
-%     VLData.Element(8).Incidence.Tip = 0;
-%     VLData.Element(8).cdp0 = 0;
-%     VLData.Element(8).cdp1 = 0;
-%     VLData.Element(8).cdp2 = 0;
-%     VLData.Element(8).cm0 = 0;
-%     VLData.Element(8).clmax = 0;
-%     VLData.Element(8).cl0 = 0;
-%     VLData.Element(8).cla = 2*pi;
-%     VLData.Element(8).npan = 6;
-%     VLData.Element(8).reflectgeometry = 'false';
-%     VLData.Element(8).wakelocation = 1;
-%     
-%     VLData.Element(9).Name = 'Fuselage Vertical Segment 3';
-%     VLData.Element(9).Area = 84;
-%     VLData.Element(9).Span = 5.25;
-%     VLData.Element(9).Taper = 1;
-%     VLData.Element(9).Sweep = 0;
-%     VLData.Element(9).Dihedral = 90;
-%     VLData.Element(9).X.Root = 20;
-%     VLData.Element(9).Y.Root = 0;
-%     VLData.Element(9).Z.Root = -5.25;
-%     VLData.Element(9).Incidence.Root = 0;
-%     VLData.Element(9).Incidence.Tip = 0;
-%     VLData.Element(9).cdp0 = 0;
-%     VLData.Element(9).cdp1 = 0;
-%     VLData.Element(9).cdp2 = 0;
-%     VLData.Element(9).cm0 = 0;
-%     VLData.Element(9).clmax = 0;
-%     VLData.Element(9).cl0 = 0;
-%     VLData.Element(9).cla = 2*pi;
-%     VLData.Element(9).npan = 6;
-%     VLData.Element(9).reflectgeometry = 'false';
-%     VLData.Element(9).wakelocation = 1;
-%     
-%     VLData.Element(10).Name = 'Engine Segment 1';
-%     VLData.Element(10).Area = 15;
-%     VLData.Element(10).Span = 3;
-%     VLData.Element(10).Taper = 1;
-%     VLData.Element(10).Sweep = 0;
-%     VLData.Element(10).Dihedral = 0;
-%     VLData.Element(10).X.Root = -1;
-%     VLData.Element(10).Y.Root = 9;
-%     VLData.Element(10).Z.Root = -1.5;
-%     VLData.Element(10).Incidence.Root = 0;
-%     VLData.Element(10).Incidence.Tip = 0;
-%     VLData.Element(10).cdp0 = 0;
-%     VLData.Element(10).cdp1 = 0;
-%     VLData.Element(10).cdp2 = 0;
-%     VLData.Element(10).cm0 = 0;
-%     VLData.Element(10).clmax = 0;
-%     VLData.Element(10).cl0 = 0;
-%     VLData.Element(10).cla = 2*pi;
-%     VLData.Element(10).npan = 4;
-%     VLData.Element(10).reflectgeometry = 'true';
-%     VLData.Element(10).wakelocation = 1;
-%     
-%     VLData.Element(11).Name = 'Engine Segment 2';
-%     VLData.Element(11).Area = 15;
-%     VLData.Element(11).Span = 3;
-%     VLData.Element(11).Taper = 1;
-%     VLData.Element(11).Sweep = 0;
-%     VLData.Element(11).Dihedral = 90;
-%     VLData.Element(11).X.Root = -1;
-%     VLData.Element(11).Y.Root = 10.5;
-%     VLData.Element(11).Z.Root = -3;
-%     VLData.Element(11).Incidence.Root = 0;
-%     VLData.Element(11).Incidence.Tip = 0;
-%     VLData.Element(11).cdp0 = 0;
-%     VLData.Element(11).cdp1 = 0;
-%     VLData.Element(11).cdp2 = 0;
-%     VLData.Element(11).cm0 = 0;
-%     VLData.Element(11).clmax = 0;
-%     VLData.Element(11).cl0 = 0;
-%     VLData.Element(11).cla = 2*pi;
-%     VLData.Element(11).npan = 4;
-%     VLData.Element(11).reflectgeometry = 'true';
-%     VLData.Element(11).wakelocation = 1;
     
-    FCData.Mach  = 0.6233;    % Freestream Mach number (Cruise 250 kts)
-    FCData.alpha = 10.75;       % Angle of attack (deg)
+    VLData.Element(7).Name = 'Engine Segment 1';
+    VLData.Element(7).Area = 51.15;
+    VLData.Element(7).Span = 5.5;
+    VLData.Element(7).Taper = 1;
+    VLData.Element(7).Sweep = 0;
+    VLData.Element(7).Dihedral = 0;
+    VLData.Element(7).X.Root = 36.725;
+    VLData.Element(7).Y.Root = 17.75;
+    VLData.Element(7).Z.Root = 8.6;
+    VLData.Element(7).Incidence.Root = 0;
+    VLData.Element(7).Incidence.Tip = 0;
+    VLData.Element(7).cdp0 = 0;
+    VLData.Element(7).cdp1 = 0;
+    VLData.Element(7).cdp2 = 0;
+    VLData.Element(7).cm0 = 0;
+    VLData.Element(7).clmax = 0;
+    VLData.Element(7).cl0 = 0;
+    VLData.Element(7).cla = 2*pi;
+    VLData.Element(7).npan = 4;
+    VLData.Element(7).reflectgeometry = 'true';
+    VLData.Element(7).wakelocation = 1;
+    
+    VLData.Element(8).Name = 'Engine Segment 2';
+    VLData.Element(8).Area = 51.15;
+    VLData.Element(8).Span = 5.5;
+    VLData.Element(8).Taper = 1;
+    VLData.Element(8).Sweep = 0;
+    VLData.Element(8).Dihedral = 90;
+    VLData.Element(8).X.Root = 36.725;
+    VLData.Element(8).Y.Root = 20.5;
+    VLData.Element(8).Z.Root = 5.85;
+    VLData.Element(8).Incidence.Root = 0;
+    VLData.Element(8).Incidence.Tip = 0;
+    VLData.Element(8).cdp0 = 0;
+    VLData.Element(8).cdp1 = 0;
+    VLData.Element(8).cdp2 = 0;
+    VLData.Element(8).cm0 = 0;
+    VLData.Element(8).clmax = 0;
+    VLData.Element(8).cl0 = 0;
+    VLData.Element(8).cla = 2*pi;
+    VLData.Element(8).npan = 4;
+    VLData.Element(8).reflectgeometry = 'true';
+    VLData.Element(8).wakelocation = 1;
+    
+    VLData.Element(9).Name = 'Engine Segment 3';
+    VLData.Element(9).Area = 51.15;
+    VLData.Element(9).Span = 5.5;
+    VLData.Element(9).Taper = 1;
+    VLData.Element(9).Sweep = 0;
+    VLData.Element(9).Dihedral = 0;
+    VLData.Element(9).X.Root = 36.725;
+    VLData.Element(9).Y.Root = 39.75;
+    VLData.Element(9).Z.Root = 8.6;
+    VLData.Element(9).Incidence.Root = 0;
+    VLData.Element(9).Incidence.Tip = 0;
+    VLData.Element(9).cdp0 = 0;
+    VLData.Element(9).cdp1 = 0;
+    VLData.Element(9).cdp2 = 0;
+    VLData.Element(9).cm0 = 0;
+    VLData.Element(9).clmax = 0;
+    VLData.Element(9).cl0 = 0;
+    VLData.Element(9).cla = 2*pi;
+    VLData.Element(9).npan = 4;
+    VLData.Element(9).reflectgeometry = 'true';
+    VLData.Element(9).wakelocation = 1;
+    
+    VLData.Element(10).Name = 'Engine Segment 4';
+    VLData.Element(10).Area = 51.15;
+    VLData.Element(10).Span = 5.5;
+    VLData.Element(10).Taper = 1;
+    VLData.Element(10).Sweep = 0;
+    VLData.Element(10).Dihedral = 90;
+    VLData.Element(10).X.Root = 36.725;
+    VLData.Element(10).Y.Root = 42.5;
+    VLData.Element(10).Z.Root = 5.85;
+    VLData.Element(10).Incidence.Root = 0;
+    VLData.Element(10).Incidence.Tip = 0;
+    VLData.Element(10).cdp0 = 0;
+    VLData.Element(10).cdp1 = 0;
+    VLData.Element(10).cdp2 = 0;
+    VLData.Element(10).cm0 = 0;
+    VLData.Element(10).clmax = 0;
+    VLData.Element(10).cl0 = 0;
+    VLData.Element(10).cla = 2*pi;
+    VLData.Element(10).npan = 4;
+    VLData.Element(10).reflectgeometry = 'true';
+    VLData.Element(10).wakelocation = 1;
+
+    
+    FCData.Mach  = 0.681;    % Freestream Mach number (Cruise 250 kts)
+    FCData.alpha = 2.08;       % Angle of attack (deg)
     FCData.beta  = 0;       % Sideslip angle (deg)
     FCData.phat  = 0;    % Nondimensional roll rate (rad/sec)
     FCData.qhat  = 0;       % Nondimensional pitch rate (rad/sec)
     FCData.rhat  = 0;       % Nondimensional yaw rate (rad/sec)
-
     
+    h = 0; %ft
+    [TempRat, PresRat, DensRat, SpeedSound] = ISA(h);
+
+    AirDens = DensRat*2.3769*10^-3;
+    
+    V = FCData.Mach*SpeedSound;
 
 % Run Aero Analysis
 [FCData] = VorLin(VLData,FCData);
@@ -357,6 +297,7 @@ xline(taper3,'--');
 grid on 
 grid minor
 
+
 for i=1:1:6
    
     y(i) = VLData.Element(i).Y.Root;
@@ -376,6 +317,8 @@ xlabel('Spanwise Location (ft)');
 grid on
 grid minor
 
+
+
 % % HT Cl (12 panels)
 % figure
 % plot(FCData.ylocal(29:40),FCData.Cl_section(29:40))
@@ -390,12 +333,24 @@ grid minor
 % ylabel('Lift Coefficient');
 % Wing Lift Distribution (28 panels)
 % figure
-% plot(FCData.ylocal(1:27),FCData.L_section(1:27))
+
+% figure
+% plot(FCData.ylocal(1:27),FCData.Cz_section(1:27))
+% 
+% LTotal = (FCData.Cz+FCData.Cx)*1/2*AirDens*V^2*VLData.Reference.Area;
+% 
+% L = FCData.Cz_section(1:27)*1/2*AirDens*V^2*VLData.Reference.Area;
+% y = FCData.ylocal;
+
+% figure
+% plot(FCData.ylocal(1:27),L)
 % title('Wing Lift Distribution');
 % xlabel('Spanwise Location');
 % ylabel('Lift');
 % grid on 
 % grid minor
+
+
 % % HT Lift Distribution (12 panels)
 % figure
 % plot(FCData.ylocal(29:40),FCData.L_section(29:40))

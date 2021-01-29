@@ -287,6 +287,9 @@ openvar FCData.Cz_section
 openvar FCData.Cx_section
 openvar FCData.Cm_section
 
+figure
+plot(FCData.ylocal(1:28),FCData.Cz_section(1:28))
+
 % Wing Cl (28 panels)
 figure
 plot(FCData.ylocal(1:28),FCData.Cl_section(1:28))

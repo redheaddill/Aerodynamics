@@ -1,6 +1,6 @@
 % function [] = Semestre_2_ailes
     
-    clear all
+    %clear all
     
     % Set Case Title and Plot Option
     VLData.Title = 'Semestre_2_ailes';
