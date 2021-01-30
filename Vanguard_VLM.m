@@ -137,8 +137,6 @@ close all
     VLData.Element(5).reflectgeometry = 'true';
     VLData.Element(5).wakelocation = 1;
     
-    
-   
     VLData.Element(6).Name = 'Tip';
     VLData.Element(6).Area = (YehudiChord(Vanguard.Wing.Aileron)+YehudiChord(59))/2*(59-Vanguard.Wing.Aileron);
     VLData.Element(6).Span = (59-Vanguard.Wing.Aileron);
