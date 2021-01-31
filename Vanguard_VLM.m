@@ -288,10 +288,10 @@ CL = FCData.CL;
 
 % Wing Cl
 figure
-plot(FCData.ylocal(1:27)/(Vanguard.Wing.b/2),FCData.Cl_section(1:27)/CL,'black')
+plot(FCData.ylocal(1:27)/(Vanguard.Wing.b/2),FCData.Cl_section(1:27),'black')
 %title('Relative Wing Lift Distribution');
-xlabel('Spanwise Location (ft)');
-ylabel('Relative Lift Coefficient');
+xlabel('Spanwise Location, ^{y}/_{b/2}');
+ylabel('^{C_l c}/_{c_{ref}}');
 xline(taper2/(Vanguard.Wing.b/2),'--');
 xline(taper3/(Vanguard.Wing.b/2),'--');
 grid on 
