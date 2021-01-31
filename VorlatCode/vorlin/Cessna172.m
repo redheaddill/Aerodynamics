@@ -125,7 +125,7 @@ function [] = Cessna172()
     
     % Set Flight Condition Data
     FCData.Mach  = 0.1630;  % Freestream Mach number
-    FCData.alpha = 4;     % Angle of attack (deg)
+    FCData.alpha = 0;     % Angle of attack (deg)
     FCData.beta  = 0;       % Sideslip angle (deg)
     FCData.phat  = 0;       % Nondimensional roll rate (rad/sec)
     FCData.qhat  = 0;       % Nondimensional pitch rate (rad/sec)
