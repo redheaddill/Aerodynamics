@@ -10,6 +10,7 @@ acftdata.general.aft_xCG = 41.74; %ft
 acftdata.general.fwd_xCG_VTOL = 46.15; %ft
 acftdata.general.aft_xCG_VTOL = 46.26; %ft
 acftdata.general.zCG = 12.23; %ft
+acftdata.general.CD0 = 0.0245; %from Excel master data
 
 acftdata.wing.S = 1578; %ft^2
 acftdata.wing.mac = 13.85; %ft^2
