@@ -103,7 +103,7 @@ xbar_s = ((lv-lw)/(0.5*bw*Kb))-tan(qcsweep);
 ybar_s = ((hv-hw)/(0.5*bw*Kb));
 Es_B = -((Kv*KB*CLw)/(Kb*ARw));
 
-%% Analytic equations
+%% Equations
 CL_a = CLw_a + (Sh/Sw)*nh*CLh_a*(1-Ed_a);
 CL_de = (Sh/Sw)*nh*CLh_a*Ee;
 CL_ih = CLh_a*(Sh/Sw);
