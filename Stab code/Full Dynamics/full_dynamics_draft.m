@@ -15,7 +15,7 @@ Ixx = acftdata.general.Ixx;
 Iyy = acftdata.general.Iyy;
 Izz = acftdata.general.Izz;
 Ixz = acftdata.general.Ixz;
-g = 62.2;
+g = 32.2;
 theta_0 = 0;
 
 % Slope calculation setup
