@@ -1,10 +1,12 @@
 run master_data.m
 
+% Inputs
 alt = 25000; %ft
 V = 250*1.688; %ft/s
 xCG = 41.5; %ft
+
 zCG = acftdata.general.zCG;
-CD0 = 0.0245; %from Excel master data
+CD0 = acftdata.general.CD0;
 M = V/speedSound(alt);
 Q = 0.5*0.0023769*sigma(alt)*V^2;
 [a,de] = trimfn(alt,V,xCG);
