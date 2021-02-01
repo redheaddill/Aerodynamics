@@ -1,7 +1,7 @@
-%function [CL] = Vanguard_2(AoA)
+function [CL] = Vanguard_VLM(AoA)
 	
-clear all
-close all
+% clear all
+% close all
 
     run AircraftData.mlx;
     
@@ -251,7 +251,7 @@ close all
 
     
     FCData.Mach  = 0.6233;    % Freestream Mach number (Cruise 375 kts)
-    FCData.alpha = 1;       % Angle of attack (deg)
+    FCData.alpha = AoA;       % Angle of attack (deg)
     FCData.beta  = 0;       % Sideslip angle (deg)
     FCData.phat  = 0;    % Nondimensional roll rate (rad/sec)
     FCData.qhat  = 0;       % Nondimensional pitch rate (rad/sec)
