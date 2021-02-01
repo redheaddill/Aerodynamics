@@ -1,7 +1,7 @@
-function [CL] = Vanguard_VLM(AoA)
+% function [CL] = Vanguard_VLM(AoA)
 	
-% clear all
-% close all
+clear all
+close all
 
     run AircraftData.mlx;
     
@@ -251,7 +251,7 @@ function [CL] = Vanguard_VLM(AoA)
 
     
     FCData.Mach  = 0.6233;    % Freestream Mach number (Cruise 375 kts)
-    FCData.alpha = AoA;       % Angle of attack (deg)
+    FCData.alpha = 1;       % Angle of attack (deg)
     FCData.beta  = 0;       % Sideslip angle (deg)
     FCData.phat  = 0;    % Nondimensional roll rate (rad/sec)
     FCData.qhat  = 0;       % Nondimensional pitch rate (rad/sec)
@@ -287,35 +287,35 @@ CL = FCData.CL;
 % openvar FCData.Cm_section
 
 % Wing Cl
-% figure
-% plot(FCData.ylocal(1:27)/(Vanguard.Wing.b/2),FCData.Cl_section(1:27),'black')
-% %title('Relative Wing Lift Distribution');
-% xlabel('Spanwise Location, ^{y}/_{b/2}');
-% ylabel('^{C_l c}/_{c_{ref}}');
-% xline(taper2/(Vanguard.Wing.b/2),'--');
-% xline(taper3/(Vanguard.Wing.b/2),'--');
-% grid on 
-% grid minor
-% 
-% 
-% for i=1:1:6
-%    
-%     y(i) = VLData.Element(i).Y.Root;
-%     
-%     twist(i) = VLData.Element(i).Incidence.Root;
-%     
-% end
-% 
-% y(7) = 59;
-% 
-% twist(7) = VLData.Element(6).Incidence.Tip;
-% 
-% figure
-% plot(y,twist,'black')
-% ylabel('Angle of Twist (deg)');
-% xlabel('Spanwise Location (ft)');
-% grid on
-% grid minor
+figure
+plot(FCData.ylocal(1:27)/(Vanguard.Wing.b/2),FCData.Cl_section(1:27),'black')
+%title('Relative Wing Lift Distribution');
+xlabel('Spanwise Location, ^{y}/_{b/2}');
+ylabel('^{C_l c}/_{c_{ref}}');
+xline(taper2/(Vanguard.Wing.b/2),'--');
+xline(taper3/(Vanguard.Wing.b/2),'--');
+grid on 
+grid minor
+
+
+for i=1:1:6
+   
+    y(i) = VLData.Element(i).Y.Root;
+    
+    twist(i) = VLData.Element(i).Incidence.Root;
+    
+end
+
+y(7) = 59;
+
+twist(7) = VLData.Element(6).Incidence.Tip;
+
+figure
+plot(y,twist,'black')
+ylabel('Angle of Twist (deg)');
+xlabel('Spanwise Location (ft)');
+grid on
+grid minor
 
 
 
@@ -334,21 +334,21 @@ CL = FCData.CL;
 % Wing Lift Distribution (28 panels)
 % figure
 
-% figure
-% plot(FCData.ylocal(1:27),FCData.Cz_section(1:27))
-% 
-% LTotal = (FCData.Cz+FCData.Cx)*1/2*AirDens*V^2*VLData.Reference.Area;
-% 
-% L = FCData.Cz_section(1:27)*1/2*AirDens*V^2*VLData.Reference.Area;
-% y = FCData.ylocal;
+figure
+plot(FCData.ylocal(1:27),FCData.Cz_section(1:27))
 
-% figure
-% plot(FCData.ylocal(1:27),L)
-% title('Wing Lift Distribution');
-% xlabel('Spanwise Location');
-% ylabel('Lift');
-% grid on 
-% grid minor
+LTotal = (FCData.Cz+FCData.Cx)*1/2*AirDens*V^2*VLData.Reference.Area;
+
+L = FCData.Cz_section(1:27)*1/2*AirDens*V^2*VLData.Reference.Area;
+y = FCData.ylocal;
+
+figure
+plot(FCData.ylocal(1:27),L)
+title('Wing Lift Distribution');
+xlabel('Spanwise Location');
+ylabel('Lift');
+grid on 
+grid minor
 
 
 % % HT Lift Distribution (12 panels)
