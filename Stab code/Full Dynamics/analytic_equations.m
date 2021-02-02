@@ -4,7 +4,7 @@ run master_data.m
 alt = 25000; %ft
 V = 250*1.688; %ft/s
 g = 32.2; %ft/s^2
-xCG = 41.5; %ft
+xCG = 41; %ft
 
 W = acftdata.general.weight;
 Q = 0.5*0.0023769*sigma(alt)*V^2;
