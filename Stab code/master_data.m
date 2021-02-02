@@ -1,15 +1,15 @@
 % Master stab & control aircraft data
 
-acftdata.general.weight = 147661; %lbf
+acftdata.general.weight = 149258; %lbf
 acftdata.general.Ixx = 1.24*10^7; %slug*ft^2
 acftdata.general.Iyy = 2.05*10^7; %slug*ft^2
 acftdata.general.Izz = 2.64*10^7; %slug*ft^2
 acftdata.general.Ixz = 200262.6; %slug*ft^2
-acftdata.general.fwd_xCG = 41.02; %ft
-acftdata.general.aft_xCG = 41.74; %ft
-acftdata.general.fwd_xCG_VTOL = 46.15; %ft
-acftdata.general.aft_xCG_VTOL = 46.26; %ft
-acftdata.general.zCG = 12.23; %ft
+acftdata.general.fwd_xCG = 41.39; %ft
+acftdata.general.aft_xCG = 42.27; %ft
+acftdata.general.fwd_xCG_VTOL = 46.14; %ft
+acftdata.general.aft_xCG_VTOL = 48.34; %ft
+acftdata.general.zCG = 12.41; %ft
 acftdata.general.CD0 = 0.0245; %from Excel master data
 
 acftdata.wing.S = 1578; %ft^2
@@ -17,7 +17,7 @@ acftdata.wing.mac = 13.85; %ft^2
 acftdata.wing.cr = 16.69; %ft
 acftdata.wing.b = 118; %ft
 acftdata.wing.AR = 8.82;
-acftdata.wing.i = deg2rad(1.72); %iw converted to rad
+acftdata.wing.i = deg2rad(1.79); %iw converted to rad
 acftdata.wing.aL0 = -3*(pi/180); %a_L=0,w converted to rad
 acftdata.wing.qcsweep = 0;
 acftdata.wing.CL_a = 0.0876*(180/pi); %CLw_a converted to rad^-1
