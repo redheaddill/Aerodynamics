@@ -73,14 +73,9 @@ CL_dT = 0; %no dT input, this makes the 2nd col of the control matrix 0
 Cm_dT = 0; %no dT input, this makes the 2nd col of the control matrix 0
 
 
-
 clear CD1 CD2 CL1 CL2 Cm1 Cm2
 
 run longitudinal_dynamics.m
-
-
-
-%         Vanguard_VLM(M,a,B,de,dr,p,q,r,xCG,zCG)
 
 
 
