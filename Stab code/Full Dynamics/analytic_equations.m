@@ -4,7 +4,7 @@ run master_data.m
 alt = 25000; %ft
 V = 250*1.688; %ft/s
 g = 32.2; %ft/s^2
-xCG = 41; %ft
+xCG = 41.75; %ft
 
 W = acftdata.general.weight;
 Q = 0.5*0.0023769*sigma(alt)*V^2;
@@ -112,9 +112,9 @@ CL = W/(0.5*0.0023769*sigma(alt)*V^2*Sw);
 CL0 = CLw_a*(iw-aL0w) + (Sh/Sw)*nh*CLh_a*(ih-Ed0);
 
 Cm_awt = -(lw/cw)*CLw_a - (Sh*lh/(Sw*cw))*nh*CLh_a*(1-Ed_a);
-deltaCm_af = -2*((Sf*lf)/(Sw*cw))*(1-1.76*(df/cf)^(3/2));
-deltaCm_ap = -2*((dp^2*lp*CNp_a)/(Sw*cw*J^2))*(1-Ed_a);
-Cm_a = Cm_awt + deltaCm_af + deltaCm_ap;
+Cm_af = -2*((Sf*lf)/(Sw*cw))*(1-1.76*(df/cf)^(3/2));
+Cm_ap = -2*((dp^2*lp*CNp_a)/(Sw*cw*J^2))*(1-Ed_a);
+Cm_a = Cm_awt + Cm_af + Cm_ap;
 Cm_de = (Sh*ch*nh*Cmh_de/(Sw*cw)) - (Sh*lh*nh*CLh_a*Ee/(Sw*cw));
 Cm_ih = -CLh_a*((Sh*lh)/(Sw*cw));
 Cm_q = -2*(lw^2/cw^2)*CLw_a - 2*((Sh*lh^2)/(Sw*cw^2))*nh*CLh_a;
@@ -133,6 +133,24 @@ Cl_Bf = -((2*gamma_f)/(3*pi))*Kl*Kgamma*CLw_a;
 Cl_Bv = -nv*((Sv*hv)/(Sw*bw))*(1-Es_B)*CLv_a;
 Cl_Bh = 0.08*nv*((Sv*bv)/(Sw*bw))*(1-Es_B)*CLv_a;
 Cl_B = Cl_Bf + Cl_Bv + Cl_Bh;
+
+%% Sub scripts
+
+% % Constant rate pitch up
+%     n = 3;
+%     q = (n-1)*(g/V);
+%     qbar = ((q*cw)/(2*V));
+%     A = [CL_a CL_de ;
+%          Cm_a Cm_de];
+%     B = [n*CL-CL0-CL_q*(n-1)*((g*cw)/(2*V^2));
+%          -Cm0-Cm_q*(n-1)*((g*cw)/(2*V^2))];
+%     X = linsolve(A,B);
+%     a = X(1);
+%     de = X(2);
+%     a_deg = a*(180/pi())
+%     de_deg = de*(180/pi())
+%     CLh = (Sh/Sw)*nh*CLh_a*(a+(2/cw)*lh*qbar+ih-Ed0+Ed_a*a+Ee*de)
+%     Lh = 0.5*0.0023769*sigma(alt)*V^2*Sw*CLh 
 
 
 
