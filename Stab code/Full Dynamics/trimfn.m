@@ -110,9 +110,9 @@ CL = W/(0.5*0.0023769*sigma(alt)*V^2*Sw);
 CL0 = CLw_a*(iw-aL0w) + (Sh/Sw)*nh*CLh_a*(ih-Ed0);
 
 Cm_awt = -(lw/cw)*CLw_a - (Sh*lh/(Sw*cw))*nh*CLh_a*(1-Ed_a);
-deltaCm_af = -2*((Sf*lf)/(Sw*cw))*(1-1.76*(df/cf)^(3/2));
-deltaCm_ap = -2*((dp^2*lp*CNp_a)/(Sw*cw*J^2))*(1-Ed_a);
-Cm_a = Cm_awt + deltaCm_af + deltaCm_ap;
+Cm_af = -2*((Sf*lf)/(Sw*cw))*(1-1.76*(df/cf)^(3/2));
+Cm_ap = -2*((dp^2*lp*CNp_a)/(Sw*cw*J^2))*(1-Ed_a);
+Cm_a = Cm_awt + Cm_af + Cm_ap;
 Cm_de = (Sh*ch*nh*Cmh_de/(Sw*cw)) - (Sh*lh*nh*CLh_a*Ee/(Sw*cw));
 Cm_ih = -CLh_a*((Sh*lh)/(Sw*cw));
 Cm_q = -2*(lw^2/cw^2)*CLw_a - 2*((Sh*lh^2)/(Sw*cw^2))*nh*CLh_a;
