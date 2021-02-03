@@ -3,7 +3,7 @@ run master_data.m
 % Inputs
 alt = 25000; %ft
 V = 250*1.688; %ft/s
-xCG = 41.5; %ft
+xCG = 41.75; %ft
 
 zCG = acftdata.general.zCG;
 CD0 = acftdata.general.CD0;
@@ -46,7 +46,9 @@ Cm_M = (Cm2-Cm1)/(M2-M1);
 [CD2,CL2,Cm2,~,~,~] = Vanguard_VLM(M,a2,0,0,0,0,0,0,xCG,zCG);
 CD_a = (CD2-CD1)/deg2rad(a2-a1);
 CL_a = (CL2-CL1)/deg2rad(a2-a1);
-Cm_a = (Cm2-Cm1)/deg2rad(a2-a1);
+Cm_awtn = (Cm2-Cm1)/deg2rad(a2-a1); %Cm,a from wing, tail, and nacelles (from VLM code)
+Cm_af = Cmaffn(alt,V,xCG);
+Cm_a = Cm_awtn + Cm_af;
 
 % alpha(dot) derivatives
 CD_adot = 0; %per Roskam SC deriv p6.1
