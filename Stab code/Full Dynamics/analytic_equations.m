@@ -137,7 +137,7 @@ Cl_B = Cl_Bf + Cl_Bv + Cl_Bh;
 %% Sub scripts
 
 % Constant rate pitch up
-    n = 3;
+    n = 4.5;
     q = (n-1)*(g/V);
     qbar = ((q*cw)/(2*V));
     A = [CL_a CL_de ;
