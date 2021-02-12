@@ -1,4 +1,4 @@
-% function [CL] = Vanguard_VLM(AoA)
+%function [CL] = Vanguard_VLM(AoA)
 	
 clear all
 close all
@@ -250,14 +250,14 @@ close all
 %     VLData.Element(10).wakelocation = 1;
 
     
-    FCData.Mach  = 0.6233;    % Freestream Mach number (Cruise 375 kts)
-    FCData.alpha = 1;       % Angle of attack (deg)
+    FCData.Mach  = 0.4689;%0.6233;    % Freestream Mach number (Cruise 375 kts)
+    FCData.alpha = 10.675;       % Angle of attack (deg)
     FCData.beta  = 0;       % Sideslip angle (deg)
     FCData.phat  = 0;    % Nondimensional roll rate (rad/sec)
     FCData.qhat  = 0;       % Nondimensional pitch rate (rad/sec)
     FCData.rhat  = 0;       % Nondimensional yaw rate (rad/sec)
     
-    h = 25000; %ft
+    h = 0; %ft
     [TempRat, PresRat, DensRat, SpeedSound] = ISA(h);
 
     AirDens = DensRat*2.3769*10^-3;
@@ -291,7 +291,7 @@ figure
 plot(FCData.ylocal(1:27)/(Vanguard.Wing.b/2),FCData.Cl_section(1:27),'black')
 %title('Relative Wing Lift Distribution');
 xlabel('Spanwise Location, ^{y}/_{b/2}');
-ylabel('^{C_l c}/_{c_{ref}}');
+ylabel('C_l ^{c}/_{c_{ref}}');
 xline(taper2/(Vanguard.Wing.b/2),'--');
 xline(taper3/(Vanguard.Wing.b/2),'--');
 grid on 
@@ -342,6 +342,8 @@ LTotal = (FCData.Cz+FCData.Cx)*1/2*AirDens*V^2*VLData.Reference.Area;
 L = FCData.Cz_section(1:27)*1/2*AirDens*V^2*VLData.Reference.Area;
 y = FCData.ylocal;
 
+Loads = [transpose(L) transpose(y)];
+
 figure
 plot(FCData.ylocal(1:27),L)
 title('Wing Lift Distribution');
@@ -357,3 +359,5 @@ grid minor
 % title('HT Lift Distribution');
 % xlabel('Spanwise Location');
 % ylabel('Lift');
+
+%end
