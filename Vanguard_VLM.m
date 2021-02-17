@@ -371,7 +371,6 @@ FCData.phat  = p;    % Nondimensional roll rate (rad/sec)
 FCData.qhat  = q;       % Nondimensional pitch rate (rad/sec)
 FCData.rhat  = r;       % Nondimensional yaw rate (rad/sec)
 
-
 % Run Aero Analysis
 [FCData] = VorLin(VLData,FCData);
 close all
