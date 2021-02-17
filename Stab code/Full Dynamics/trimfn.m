@@ -118,19 +118,19 @@ Cm_ih = -CLh_a*((Sh*lh)/(Sw*cw));
 Cm_q = -2*(lw^2/cw^2)*CLw_a - 2*((Sh*lh^2)/(Sw*cw^2))*nh*CLh_a;
 Cm0 = Cmw - (lw/cw)*CLw_a*(iw-aL0w) - ((Sh*lh)/(Sw*cw))*nh*CLh_a*(ih-Ed0);
 
-SM = -Cm_a/CL_a;
-MM = SM - ((Cm_q*((g*cw)/(2*V^2)))/(CL-CL_q*((g*cw)/(2*V^2))));
-ddedn = -((CL*Cm_a+(CL_a*Cm_q-CL_q*Cm_a)*((g*cw)/(2*V^2)))/(CL_a*Cm_de-CL_de*Cm_a));
-
-Cn_Bv = nv*((Sv*lv)/(Sw*bw))*CLv_a*(1-Es_B);
-Cn_Bf = 2*((Sf*lf)/(Sw*bw))*(1-1.76*(df/cf)^1.5);
-Cn_Bp = ((2*dp^2*lp)/(Sw*bw))*(1-Es_B)*(CNp_a/J^2);
-Cn_B = Cn_Bv + Cn_Bf + Cn_Bp;
-
-Cl_Bf = -((2*gamma_f)/(3*pi))*Kl*Kgamma*CLw_a;
-Cl_Bv = -nv*((Sv*hv)/(Sw*bw))*(1-Es_B)*CLv_a;
-Cl_Bh = 0.08*nv*((Sv*bv)/(Sw*bw))*(1-Es_B)*CLv_a;
-Cl_B = Cl_Bf + Cl_Bv + Cl_Bh;
+% SM = -Cm_a/CL_a;
+% MM = SM - ((Cm_q*((g*cw)/(2*V^2)))/(CL-CL_q*((g*cw)/(2*V^2))));
+% ddedn = -((CL*Cm_a+(CL_a*Cm_q-CL_q*Cm_a)*((g*cw)/(2*V^2)))/(CL_a*Cm_de-CL_de*Cm_a));
+% 
+% Cn_Bv = nv*((Sv*lv)/(Sw*bw))*CLv_a*(1-Es_B);
+% Cn_Bf = 2*((Sf*lf)/(Sw*bw))*(1-1.76*(df/cf)^1.5);
+% Cn_Bp = ((2*dp^2*lp)/(Sw*bw))*(1-Es_B)*(CNp_a/J^2);
+% Cn_B = Cn_Bv + Cn_Bf + Cn_Bp;
+% 
+% Cl_Bf = -((2*gamma_f)/(3*pi))*Kl*Kgamma*CLw_a;
+% Cl_Bv = -nv*((Sv*hv)/(Sw*bw))*(1-Es_B)*CLv_a;
+% Cl_Bh = 0.08*nv*((Sv*bv)/(Sw*bw))*(1-Es_B)*CLv_a;
+% Cl_B = Cl_Bf + Cl_Bv + Cl_Bh;
 
 A = [CL_a CL_de ;
      Cm_a Cm_de];
