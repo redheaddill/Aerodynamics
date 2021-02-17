@@ -12,7 +12,7 @@ Lr = ((Q*Sw*bw)/Ixx)*(bw/(2*V))*Cl_r;
 Lda = ((Q*Sw*bw)/Ixx)*Cl_da;
 Ldr = ((Q*Sw*bw)/Ixx)*Cl_dr;
 
-NB = ((Q*Sw*bw)/Izz)*Cn_b;
+NB = ((Q*Sw*bw)/Izz)*Cn_B;
 Np = ((Q*Sw*bw)/Izz)*(bw/(2*V))*Cn_p;
 Nr = ((Q*Sw*bw)/Izz)*(bw/(2*V))*Cn_r;
 Nda = ((Q*Sw*bw)/Izz)*Cn_da;
