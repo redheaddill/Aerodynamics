@@ -31,6 +31,12 @@ q1 = 0; %rad/s
 q2 = 0.0175; %rad/s
 B1 = 0; %deg
 B2 = 1; %deg
+p1 = 0; %rad/s
+p2 = 0.0175; %rad/s
+r1 = 0; %rad/s
+r2 = 0.0175; %rad/s
+dr1 = 0; %deg
+dr2 = 1; %deg
 
 % % CD CL Cm
 % [CDi,CL,Cm,~,~,~] = Vanguard_VLM(M,a,0,de,0,0,0,0,xCG,zCG);
@@ -85,7 +91,25 @@ Cl_B = ClBfn(alt,V,xCG);
 Cn_B = (Cn2-Cn1)/deg2rad(B2-B1) + Cn_Bf;
 
 % p derivatives
+[~,~,~,CY1,Cl1,Cn1] = Vanguard_VLM(M,0,0,0,0,p1,0,0,xCG,zCG);
+[~,~,~,CY2,Cl2,Cn2] = Vanguard_VLM(M,0,0,0,0,p2,0,0,xCG,zCG);
+CY_p = (CY2-CY1)/(p2-p1);
+Cl_p = (Cl2-Cl1)/(p2-p1);
+Cn_p = (Cn2-Cn1)/(p2-p1);
 
+% r derivatives
+[~,~,~,CY1,Cl1,Cn1] = Vanguard_VLM(M,0,0,0,0,0,0,r1,xCG,zCG);
+[~,~,~,CY2,Cl2,Cn2] = Vanguard_VLM(M,0,0,0,0,0,0,r2,xCG,zCG);
+CY_r = (CY2-CY1)/(p2-p1);
+Cl_r = (Cl2-Cl1)/(p2-p1);
+Cn_r = (Cn2-Cn1)/(p2-p1);
+
+% dr derivatives
+[~,~,~,CY1,Cl1,Cn1] = Vanguard_VLM(M,0,0,0,dr1,0,0,0,xCG,zCG);
+[~,~,~,CY2,Cl2,Cn2] = Vanguard_VLM(M,0,0,0,dr2,0,0,0,xCG,zCG);
+CY_dr = (CY2-CY1)/deg2rad(dr2-dr1);
+Cl_dr = (Cl2-Cl1)/deg2rad(dr2-dr1);
+Cn_dr = (Cn2-Cn1)/deg2rad(dr2-dr1);
 
 
 
