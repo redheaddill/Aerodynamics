@@ -1,4 +1,4 @@
-function [CDout,CLout,Cmout,CYout,Clout,Cnout] = Vanguard_VLM(M,a,B,de,dr,p,q,r,xCG,zCG)
+function [CDout,CLout,Cmout,CYout,Clout,Cnout] = Vanguard_VLM(M,a,B,de,dr,p,q,r,xCG,zCG,da)
 
 run AircraftData.mlx
 
@@ -350,8 +350,8 @@ VLData.Element(14).Dihedral = 90;
 VLData.Element(14).X.Root = xr;
 VLData.Element(14).Y.Root = 0;
 VLData.Element(14).Z.Root = zr;
-VLData.Element(14).Incidence.Root = dr;
-VLData.Element(14).Incidence.Tip = dr;
+VLData.Element(14).Incidence.Root = -dr;
+VLData.Element(14).Incidence.Tip = -dr;
 VLData.Element(14).cdp0 = 0;
 VLData.Element(14).cdp1 = 0;
 VLData.Element(14).cdp2 = 0;
@@ -362,6 +362,50 @@ VLData.Element(14).cla = 2*pi;
 VLData.Element(14).npan = 10;
 VLData.Element(14).reflectgeometry = 'false';
 VLData.Element(14).wakelocation = 1;
+
+VLData.Element(15).Name = 'RAileron';    
+VLData.Element(15).Area = ((YehudiChord(taper2)+YehudiChord(taper3))/2*(taper3-taper2))*0.3;
+VLData.Element(15).Span = (taper3-taper2);
+VLData.Element(15).Taper = YehudiChord(taper3)/YehudiChord(taper2);
+VLData.Element(15).Sweep = -7.6;
+VLData.Element(15).Dihedral = 0;
+VLData.Element(15).X.Root = xw+5.5;
+VLData.Element(15).Y.Root = taper2;
+VLData.Element(15).Z.Root = zw;
+VLData.Element(15).Incidence.Root = InstallAngle-YehudiTwist-TaperTwist1-TaperTwist2-da;
+VLData.Element(15).Incidence.Tip = InstallAngle-YehudiTwist-TaperTwist1-TaperTwist2-da;
+VLData.Element(15).cdp0 = 0;
+VLData.Element(15).cdp1 = 0;
+VLData.Element(15).cdp2 = 0;
+VLData.Element(15).cm0 = wingCm0;
+VLData.Element(15).clmax = 0;                 
+VLData.Element(15).cl0 = 0;                  
+VLData.Element(15).cla = 2*pi; 
+VLData.Element(15).npan = 5;
+VLData.Element(15).reflectgeometry = 'false';
+VLData.Element(15).wakelocation = 1;
+
+VLData.Element(16).Name = 'LAileron';    
+VLData.Element(16).Area = ((YehudiChord(taper2)+YehudiChord(taper3))/2*(taper3-taper2))*0.3;
+VLData.Element(16).Span = (taper3-taper2);
+VLData.Element(16).Taper = YehudiChord(taper3)/YehudiChord(taper2);
+VLData.Element(16).Sweep = -7.6;
+VLData.Element(16).Dihedral = 180;
+VLData.Element(16).X.Root = xw+5.5;
+VLData.Element(16).Y.Root = -taper2;
+VLData.Element(16).Z.Root = zw;
+VLData.Element(16).Incidence.Root = InstallAngle-YehudiTwist-TaperTwist1-TaperTwist2-da;
+VLData.Element(16).Incidence.Tip = InstallAngle-YehudiTwist-TaperTwist1-TaperTwist2-da;
+VLData.Element(16).cdp0 = 0;
+VLData.Element(16).cdp1 = 0;
+VLData.Element(16).cdp2 = 0;
+VLData.Element(16).cm0 = wingCm0;
+VLData.Element(16).clmax = 0;                 
+VLData.Element(16).cl0 = 0;                  
+VLData.Element(16).cla = 2*pi; 
+VLData.Element(16).npan = 5;
+VLData.Element(16).reflectgeometry = 'false';
+VLData.Element(16).wakelocation = 1;
 
 % Set Flight Condition
 FCData.Mach  = M;    % Freestream Mach number (Cruise 375 kts)
