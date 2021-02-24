@@ -7,7 +7,7 @@ for i = 1:length(mach)
 
     % Inputs
     alt = 25000; %ft
-    xCG = 41.75; %ft
+    xCG = 40.4; %ft
     M = mach(i);
 
     zCG = acftdata.general.zCG;
