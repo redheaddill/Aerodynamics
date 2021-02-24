@@ -4,7 +4,7 @@ run master_data.m
 alt = 25000; %ft
 V = 250*1.688; %ft/s
 g = 32.2; %ft/s^2
-xCG = 41.75; %ft
+xCG = 40.4; %ft
 
 W = acftdata.general.weight;
 Q = 0.5*0.0023769*sigma(alt)*V^2;
@@ -136,21 +136,21 @@ Cl_B = Cl_Bf + Cl_Bv + Cl_Bh;
 
 %% Sub scripts
 
-% % Constant rate pitch up
-%     n = 4.5;
-%     q = (n-1)*(g/V);
-%     qbar = ((q*cw)/(2*V));
-%     A = [CL_a CL_de ;
-%          Cm_a Cm_de];
-%     B = [n*CL-CL0-CL_q*(n-1)*((g*cw)/(2*V^2));
-%          -Cm0-Cm_q*(n-1)*((g*cw)/(2*V^2))];
-%     X = linsolve(A,B);
-%     a = X(1);
-%     de = X(2);
-%     a_deg = a*(180/pi())
-%     de_deg = de*(180/pi())
-%     CLh = (Sh/Sw)*nh*CLh_a*(a+(2/cw)*lh*qbar+ih-Ed0+Ed_a*a+Ee*de)
-%     Lh = 0.5*0.0023769*sigma(alt)*V^2*Sw*CLh 
+% Constant rate pitch up
+    n = 4.875;
+    q = (n-1)*(g/V);
+    qbar = ((q*cw)/(2*V));
+    A = [CL_a CL_de ;
+         Cm_a Cm_de];
+    B = [n*CL-CL0-CL_q*(n-1)*((g*cw)/(2*V^2));
+         -Cm0-Cm_q*(n-1)*((g*cw)/(2*V^2))];
+    X = linsolve(A,B);
+    a = X(1);
+    de = X(2);
+    a_deg = a*(180/pi())
+    de_deg = de*(180/pi())
+    CLh = (Sh/Sw)*nh*CLh_a*(a+(2/cw)*lh*qbar+ih-Ed0+Ed_a*a+Ee*de)
+    Lh = 0.5*0.0023769*sigma(alt)*V^2*Sw*CLh 
 
 
 
