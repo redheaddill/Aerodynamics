@@ -3,7 +3,7 @@ run master_data.m
 % Inputs
 alt = 25000; %ft
 V = 250*1.688; %ft/s
-xCG = 41.75; %ft
+xCG = 40.4; %ft
 
 zCG = acftdata.general.zCG;
 CD0 = acftdata.general.CD0;
