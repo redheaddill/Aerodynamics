@@ -250,8 +250,8 @@ close all
     VLData.Element(10).wakelocation = 1;
 
     
-    FCData.Mach  = 0.2269;%0.6233;    % Freestream Mach number (Cruise 375 kts)
-    FCData.alpha = 13.75;       % Angle of attack (deg)
+    FCData.Mach  = 0.06 %0.6233;    % Freestream Mach number (Cruise 375 kts)
+    FCData.alpha = 15;       % Angle of attack (deg)
     FCData.beta  = 0;       % Sideslip angle (deg)
     FCData.phat  = 0;    % Nondimensional roll rate (rad/sec)
     FCData.qhat  = 0;       % Nondimensional pitch rate (rad/sec)
