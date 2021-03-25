@@ -417,7 +417,7 @@ FCData.rhat  = r;       % Nondimensional yaw rate (rad/sec)
 
 % Run Aero Analysis
 [FCData] = VorLin(VLData,FCData);
-close all
+close
 
 % Print Analysis Results
 CDout = FCData.CD;
